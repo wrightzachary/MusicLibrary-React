@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SongTable from './Components/SongTable/SongTable';
 import axios from 'axios';
+import CreateSong from './Components/CreateSong/CreateSong';
 
 class App extends Component {
     constructor(props) {
@@ -36,9 +37,20 @@ class App extends Component {
     //     });
     // }
 
+    addNewSong(song){
+        this.songs.push(song);
+        this.setState({
+            songNumber: this.songs.length -1
+        });
+        console.log('test', this.state.title)
+    }
+
     render() { 
         return ( 
-            <SongTable songs={this.state.songs}/>
+            <React.Fragment>
+                <SongTable songs={this.state.songs}/>
+                <CreateSong addNewSong={this.addNewSong.bind(this)} />
+            </React.Fragment>
          );
     }
 }
