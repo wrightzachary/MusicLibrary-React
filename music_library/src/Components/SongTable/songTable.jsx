@@ -1,8 +1,8 @@
 import React from 'react';
 
-const songList = (props) => {
+const SongTable = (props) => {
     return ( 
-        <table id='songList'>
+        <table>
             <thead>
                 <tr>
                     <th>song title</th>
@@ -13,7 +13,7 @@ const songList = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.songList.map((song) => {
+                {props.songs.map((song) => {
                     return(
                         <tr>
                         <td>{song.title}</td>
@@ -27,7 +27,11 @@ const songList = (props) => {
                     )}
             </tbody>
         </table>
+        // <div>
+        //     <h1>{props.songs[0].title}</h1>
+        //     <h2>{props.songs[0].artist}</h2>
+        // </div>
      );
 }
  
-export default songList;
+export default SongTable;
