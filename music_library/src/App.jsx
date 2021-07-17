@@ -38,11 +38,10 @@ class App extends Component {
     // }
 
     addNewSong(song){
-        this.songs.push(song);
         this.setState({
-            songNumber: this.songs.length -1
+            songs: [...this.state.songs, song]
         });
-        console.log('test', this.state.title)
+        console.log('test', this.state.songs)
     }
 
     render() { 
