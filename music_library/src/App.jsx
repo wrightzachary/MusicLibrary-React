@@ -23,6 +23,12 @@ class App extends Component {
         });
     }
 
+    async deleteSong(id){
+        console.log("deleteSong", id)
+            await axios.delete(`http://127.0.0.1:8000/music/${id}/`);
+            this.songId = this.id;
+    }
+
     async addNewSong(song){
         console.log(song)
         try{
@@ -50,7 +56,7 @@ class App extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <SongTable songs={this.state.songs}/>
+                <SongTable songs={this.state.songs} deleteSong={this.deleteSong.bind(this)}/>
                 <CreateSong addNewSong={this.addNewSong.bind(this)} />
             </React.Fragment>
          );

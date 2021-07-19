@@ -14,6 +14,7 @@ const SongTable = (props) => {
             </thead>
             <tbody>
                 {props.songs.map((song) => {
+                    console.log("form", song)
                     return(
                         <tr>
                         <td>{song.title}</td>
@@ -21,7 +22,7 @@ const SongTable = (props) => {
                         <td>{song.artist}</td>
                         <td>{song.genre}</td>
                         <td>{song.release_date}</td>
-                        <td><button type='submit'>DELETE</button></td>
+                        <td><button onClick={() => props.deleteSong(song.id)}>DELETE</button></td>
                         </tr>
                     )}
                     )}
