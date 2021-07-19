@@ -8,6 +8,7 @@ class CreateSong extends React.Component {
         title: '',
         artist: '',
         album: '',
+        genre: '',
         release_date: '',
       }
   
@@ -23,21 +24,22 @@ class CreateSong extends React.Component {
   
     handleSubmit(event) {
         event.preventDefault();
-        const book = {
+        const song = {
             title: this.state.title,
             artist: this.state.artist,
             album: this.state.album,
+            genre: this.state.genre,
             release_date: this.state.release_date
         }
 
-        this.props.addNewSong(book);
+        this.props.addNewSong(song);
         this.setState({
             title: '',
             artist: '',
             album: '',
+            genre: '',
             release_date: '',
         });
-        console.log('test', this.state.title)
     }
   
     render() {
