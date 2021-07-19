@@ -2,18 +2,22 @@ import React, { Component } from 'react';
 import SongTable from './Components/SongTable/SongTable';
 import axios from 'axios';
 import CreateSong from './Components/CreateSong/CreateSong';
+import FilterSearch from './Components/FilterSearch/FilterSearch';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            songs: []
+            songs: [], 
          }
     }
 
+   
     componentDidMount(){
         this.getAllSongs();
     }
+
+    
 
     async getAllSongs(){
         let response = await axios.get('http://127.0.0.1:8000/music/');
@@ -27,6 +31,7 @@ class App extends Component {
         console.log("deleteSong", id)
             await axios.delete(`http://127.0.0.1:8000/music/${id}/`);
             this.songId = this.id;
+            this.getAllSongs()
     }
 
     async addNewSong(song){
@@ -56,7 +61,8 @@ class App extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <SongTable songs={this.state.songs} deleteSong={this.deleteSong.bind(this)}/>
+                <SongTable songs={this.state.songs} deleteSong={this.deleteSong.bind(this)} />
+                <FilterSearch search={this.state.songs} input={this.state} />
                 <CreateSong addNewSong={this.addNewSong.bind(this)} />
             </React.Fragment>
          );

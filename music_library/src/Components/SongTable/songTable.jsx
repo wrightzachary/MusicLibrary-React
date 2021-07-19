@@ -25,6 +25,7 @@ const SongTable = (props) => {
                         <td><button onClick={() => props.deleteSong(song.id)}>DELETE</button></td>
                         </tr>
                     )}
+                    
                     )}
             </tbody>
         </table>
