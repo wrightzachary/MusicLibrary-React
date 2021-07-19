@@ -23,6 +23,22 @@ class App extends Component {
         });
     }
 
+    async addNewSong(song){
+        console.log(song)
+        try{
+            let response = await axios.post('http://127.0.0.1:8000/music/', song);
+            // console.log(response.data)
+            alert('Song Added!')
+            this.setState({
+                song:response.data
+            });
+        }
+        catch(e){
+            console.log(e.message)
+        }
+    
+    }
+
     // componentDidMount(){
     //     axios.get('http://127.0.0.1:8000/music/')
     //     .then(response => this.setState({
@@ -30,12 +46,6 @@ class App extends Component {
     //     }));
     // }
 
-    addNewSong(song){
-        this.setState({
-            songs: [...this.state.songs, song]
-        });
-        console.log('test', this.state.songs)
-    }
 
     render() { 
         return ( 

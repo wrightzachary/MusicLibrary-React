@@ -27,10 +27,6 @@ const SongTable = (props) => {
                     )}
             </tbody>
         </table>
-        // <div>
-        //     <h1>{props.songs[0].title}</h1>
-        //     <h2>{props.songs[0].artist}</h2>
-        // </div>
      );
 }
  
