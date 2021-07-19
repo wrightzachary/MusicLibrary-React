@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 const SongTable = (props) => {
     return ( 
@@ -14,7 +14,6 @@ const SongTable = (props) => {
             </thead>
             <tbody>
                 {props.songs.map((song) => {
-                    console.log("form", song)
                     return(
                         <tr>
                         <td>{song.title}</td>
@@ -25,7 +24,6 @@ const SongTable = (props) => {
                         <td><button onClick={() => props.deleteSong(song.id)}>DELETE</button></td>
                         </tr>
                     )}
-                    
                     )}
             </tbody>
         </table>
