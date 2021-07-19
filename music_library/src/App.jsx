@@ -43,6 +43,7 @@ class App extends Component {
             this.setState({
                 song:response.data
             });
+            this.getAllSongs()
         }
         catch(e){
             console.log(e.message)
