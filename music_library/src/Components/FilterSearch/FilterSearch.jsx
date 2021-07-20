@@ -1,45 +1,63 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const FilterSearch = (props) => {
+class FilterSearch extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+         searchTerm:""
+        }
+      }
 
-    const filterSearch =  () => props.search.filter(song => {
-        if (song.artist.toLowerCase===props.searchFields.toLowerCase){
-            return song.artist
-        }
-        if (song.title.toLowerCase===props.searchFields.toLowerCase){
-            return song.title
-        }
-        if (song.album.toLowerCase===props.searchFields.toLowerCase){
-            return song.album
-        }
-        if (song.genre.toLowerCase===props.searchFields.toLowerCase){
-            return song.genre
-        }
-        if (song.release_date.toLowerCase===props.searchFields.toLowerCase){
-            return song.release_date
-        }
-        // return song.artist.toLowerCase().includes(props.searchFields.toLowerCase()) || 
-        //   song.title.toLowerCase().includes(props.searchFields.toLowerCase()) ||
-        //   song.album.toLowerCase().includes(props.searchFields.toLowerCase()) ||
-        //   song.genre.toLowerCase().includes(props.searchFields.toLowerCase()) ||
-        //   song.releaseDate.toLowerCase().includes(props.searchFields.toLowerCase()) 
-    });
+    handleChange = (event) => {
+        console.log(event.target.value)
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    }
+
+    handleSubmit =(event) => {
+        console.log(this.state.searchTerm)
+        event.preventDefault();
+        let filteredResults = this.props.search.filter(song => {
+            if (song.artist.toLowerCase()==this.state.searchTerm.toLowerCase()){
+                return song
+            }
+            if (song.title.toLowerCase()==this.state.searchTerm.toLowerCase()){
+                return song
+            }
+            if (song.album.toLowerCase()==this.state.searchTerm.toLowerCase()){
+                return song
+            }
+            if (song.genre.toLowerCase()==this.state.searchTerm.toLowerCase()){
+                return song
+            }
+            if (song.release_date.toLowerCase()==this.state.searchTerm.toLowerCase()){
+                return song
+            }
+        });
+        this.setState({
+            searchTerm:""
+        })
+        this.props.filterTrigger(filteredResults)
+    }
+   render(){
 
     return (  
         <React.Fragment>
             <center>
-            <form>
+            <form onSubmit={this.handleSubmit}>
                <h1>Search For Song, Artist, Album, Genre, or Release Date</h1>
                 <div className="col-md-4">
                 <label>Search Music Table</label>
-                    <input title="search" type='text' />
-                    <input type="button" value="search" onClick={filterSearch} />
+                    <input title="search" type='text' name="searchTerm" value={this.state.searchTerm} onChange={this.handleChange}/>
+                    <input type="button" value="search" type="submit" />
                 </div>
                 
             </form>
             </center>
         </React.Fragment>
     );
+   }
 }
  
 export default FilterSearch;

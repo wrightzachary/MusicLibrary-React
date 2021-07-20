@@ -1,4 +1,5 @@
 import React from 'react';
+import './CreateSong.css';
 
 class CreateSong extends React.Component {
     constructor(props) {
@@ -46,44 +47,39 @@ class CreateSong extends React.Component {
   
     render() {
       return (
-        <div>
-        <hr />
+        <div >
             <center>
-                <h3>Add A New Song!</h3>    
             <form onSubmit={this.handleSubmit}>
-                <div className="row col-align">
-                    <div className="col-md-4">
+                <div className="row col-sm-3 sidenav">
+                <h3>Add A New Song!</h3> 
+
                         <label>Title:</label>
                         <input type="text" name="title" value={this.state.title}
                         onChange={this.handleChange} />
-                    </div>
-                    <div className="col-md-4">
+
                         <label>Album:</label>
                         <input type="text" name="album" value={this.state.album}
                         onChange={this.handleChange} />
-                    </div>
-                    <div className="col-md-4">
+
                         <label>Artist:</label>
                         <input type="text" name="artist" value={this.state.artist}
                         onChange={this.handleChange} />
-                    </div>
-                    <div className="col-md-4">
+
                         <label>Genre:</label>
                         <input type="text" name="genre" value={this.state.genre}
                         onChange={this.handleChange} />
-                    </div>
-                    <div className="col-md-4">
+
                         <label>Release Date:</label>
                         <input type="text" name="release_date" value={this.state.Release_date}
                         onChange={this.handleChange} />
-                    </div>
-                    <div className="col-md-4">
-                        <input type="submit" value="Add" />
-                    </div>
+
+                        <input type="submit" class="btn btn-info" value="Add" />
+
                 </div>
             </form>
             </center>
-    </div> );
+        </div>
+      )
     }
   }
 
