@@ -49,7 +49,7 @@ class FilterSearch extends Component{
             <form onSubmit={this.handleSubmit}>
                <label>Search For Song, Artist, Album, Genre, or Release Date:</label>
                 <div className="col-md-4">
-                    <input title="search" type='text' name="searchTerm" value={this.state.searchTerm} onChange={this.handleChange}/>
+                    <input size="40" title="search" type='text' name="searchTerm" value={this.state.searchTerm} onChange={this.handleChange}/>
                     <input type="button" value="search" type="submit" />
                 </div>
             </form>
