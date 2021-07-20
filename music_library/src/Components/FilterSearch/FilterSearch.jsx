@@ -51,7 +51,6 @@ class FilterSearch extends Component{
                     <input title="search" type='text' name="searchTerm" value={this.state.searchTerm} onChange={this.handleChange}/>
                     <input type="button" value="search" type="submit" />
                 </div>
-                
             </form>
             </center>
         </React.Fragment>
