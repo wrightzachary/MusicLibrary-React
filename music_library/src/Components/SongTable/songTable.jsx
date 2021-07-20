@@ -8,11 +8,12 @@ const SongTable = (props) => {
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>song title</th>
-                        <th>album</th>
-                        <th>artist</th>
-                        <th>genre</th>
-                        <th>release date</th>
+                        <th>Song title</th>
+                        <th>Album</th>
+                        <th>Artist</th>
+                        <th>Genre</th>
+                        <th>Release Date</th>
+                        <th>Delete Song</th>
                     </tr>
                 </thead>
                 <tbody>
