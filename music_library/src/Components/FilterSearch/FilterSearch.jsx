@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './FilterSearch';
 
 class FilterSearch extends Component{
     constructor(props) {
