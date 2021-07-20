@@ -4,6 +4,8 @@ import axios from 'axios';
 import CreateSong from './Components/CreateSong/CreateSong';
 import FilterSearch from './Components/FilterSearch/FilterSearch';
 import './App.css';
+import Footer from './Components/Footer/Footer';
+import Header from './Components/Header/Header';
 
 class App extends Component {
     constructor(props) {
@@ -59,9 +61,11 @@ class App extends Component {
     render() { 
         return ( 
             <div className="container-fluid">
+                <Header />
                 <FilterSearch search={this.state.songs} filterTrigger={this.filterSongs} />
                 <SongTable songs={this.state.songs} deleteSong={this.deleteSong.bind(this)} />
                 <CreateSong addNewSong={this.addNewSong.bind(this)} />
+                <Footer />
             </div>
          );
     }

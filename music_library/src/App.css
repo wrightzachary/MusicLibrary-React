@@ -4,14 +4,8 @@ text-align: right;
 
 .container-fluid {
     background-color: #f1f1f1;
-}
-.center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
 }
 
 .row-spacer {
