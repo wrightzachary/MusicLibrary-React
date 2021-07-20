@@ -3,6 +3,7 @@ import SongTable from './Components/SongTable/SongTable';
 import axios from 'axios';
 import CreateSong from './Components/CreateSong/CreateSong';
 import FilterSearch from './Components/FilterSearch/FilterSearch';
+import './App.css';
 
 class App extends Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class App extends Component {
         try{
             let response = await axios.post('http://127.0.0.1:8000/music/', song);
             // console.log(response.data)
-            alert('Song Added!')
+            // alert('Song Added!')
             this.setState({
                 song:response.data
             });
@@ -61,11 +62,11 @@ class App extends Component {
 
     render() { 
         return ( 
-            <React.Fragment>
+            <div className="container-fluid">
                 <SongTable songs={this.state.songs} deleteSong={this.deleteSong.bind(this)} />
                 <FilterSearch search={this.state.songs} input={this.state} />
                 <CreateSong addNewSong={this.addNewSong.bind(this)} />
-            </React.Fragment>
+            </div>
          );
     }
 }

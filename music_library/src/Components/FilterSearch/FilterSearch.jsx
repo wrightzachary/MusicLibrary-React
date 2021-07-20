@@ -15,7 +15,7 @@ const FilterSearch = (props) => {
         <React.Fragment>
             <form>
                 <input type="text" value="search for your criteria" />
-                <input type="button" value="search" onClick={filterSearch} />
+                <input type="button" class="btn btn-info" value="search" onClick={filterSearch} />
             </form>
             
         </React.Fragment>
