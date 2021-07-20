@@ -28,8 +28,9 @@ class CreateSong extends React.Component {
             title: this.state.title,
             artist: this.state.artist,
             album: this.state.album,
+            release_date: this.state.release_date,
             genre: this.state.genre,
-            release_date: this.state.release_date
+
         }
 
         this.props.addNewSong(song);
@@ -37,8 +38,9 @@ class CreateSong extends React.Component {
             title: '',
             artist: '',
             album: '',
-            genre: '',
             release_date: '',
+            genre: '',
+
         });
     }
   
@@ -48,7 +50,6 @@ class CreateSong extends React.Component {
         <hr />
             <center>
                 <h3>Add A New Song!</h3>    
-            </center>
             <form onSubmit={this.handleSubmit}>
                 <div className="row col-align">
                     <div className="col-md-4">
@@ -81,6 +82,7 @@ class CreateSong extends React.Component {
                     </div>
                 </div>
             </form>
+            </center>
     </div> );
     }
   }
