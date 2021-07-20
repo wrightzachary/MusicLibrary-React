@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SongTable from './Components/SongTable/songTable.jsx';
+import SongTable from './Components/SongTable/SongTable.jsx';
 import axios from 'axios';
 import CreateSong from './Components/CreateSong/CreateSong';
 import FilterSearch from './Components/FilterSearch/FilterSearch';
