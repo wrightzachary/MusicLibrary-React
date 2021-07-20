@@ -46,9 +46,8 @@ class FilterSearch extends Component{
         <React.Fragment>
             <center>
             <form onSubmit={this.handleSubmit}>
-               <h1>Search For Song, Artist, Album, Genre, or Release Date</h1>
+               <label>Search For Song, Artist, Album, Genre, or Release Date:</label>
                 <div className="col-md-4">
-                <label>Search Music Table</label>
                     <input title="search" type='text' name="searchTerm" value={this.state.searchTerm} onChange={this.handleChange}/>
                     <input type="button" value="search" type="submit" />
                 </div>

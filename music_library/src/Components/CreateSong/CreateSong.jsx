@@ -70,7 +70,7 @@ class CreateSong extends React.Component {
                         onChange={this.handleChange} />
 
                         <label>Release Date:</label>
-                        <input type="text" name="release_date" value={this.state.Release_date}
+                        <input type="text" name="release_date" value={this.state.release_date}
                         onChange={this.handleChange} />
 
                         <input type="submit" class="btn btn-info" value="Add" />

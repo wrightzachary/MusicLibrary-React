@@ -13,12 +13,9 @@ class App extends Component {
          }
     }
 
-   
     componentDidMount(){
         this.getAllSongs();
     }
-
-    
 
     async getAllSongs(){
         let response = await axios.get('http://127.0.0.1:8000/music/');
@@ -59,19 +56,11 @@ class App extends Component {
         })
     }
 
-    // componentDidMount(){
-    //     axios.get('http://127.0.0.1:8000/music/')
-    //     .then(response => this.setState({
-    //         songs: response.data
-    //     }));
-    // }
-
-
     render() { 
         return ( 
             <div className="container-fluid">
-                <SongTable songs={this.state.songs} deleteSong={this.deleteSong.bind(this)} />
                 <FilterSearch search={this.state.songs} filterTrigger={this.filterSongs} />
+                <SongTable songs={this.state.songs} deleteSong={this.deleteSong.bind(this)} />
                 <CreateSong addNewSong={this.addNewSong.bind(this)} />
             </div>
          );
